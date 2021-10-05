@@ -1,0 +1,27 @@
+nav{
+    width:150px;
+    margin: 0;
+}
+p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    margin: 0;
+    text-align: center;
+    background-color: white;
+    transition: 100ms background-color;
+}
+p:hover{
+    background-color: darkgray;
+}
+
+p img{
+    height: 64px;
+    width: 64px;
+}
+img{
+    width: 64px;
+    height: 64px;
+}

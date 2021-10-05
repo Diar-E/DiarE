@@ -1,0 +1,24 @@
+.calendarEntry{
+    height: 75px;
+    width: 75px;
+    background-color: #dedede;
+    margin: 10px;
+    flex-wrap: wrap;
+
+    transition: background-color 300ms;
+}
+.calendarEntry:hover{
+    background-color: green;
+    border: 1px solid black;
+    margin: 9px;
+    cursor: pointer;
+}
+
+.active{
+    background-color: lightblue;
+    
+    margin: 10px;
+}
+.active:hover{
+    background-color: red;
+}
