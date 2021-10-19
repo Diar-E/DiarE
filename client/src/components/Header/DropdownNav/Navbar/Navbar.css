@@ -1,13 +1,13 @@
 nav{
-    width:150px;
+    width:100px;
     margin: 0;
 }
 p{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     margin: 0;
     text-align: center;
     background-color: white;
