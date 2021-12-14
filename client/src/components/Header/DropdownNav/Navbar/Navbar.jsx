@@ -5,15 +5,17 @@ import Users from '../../../../res/users.svg'
 import AddEntry from '../../../../res/add_entry.svg'
 import CalendarEntry from '../../../CalendarView/Calendar/CalendarEntry/CalendarEntry.jsx';
 
+import {Link} from 'react-router-dom';
+
 const Navbar = () => {
 
     return (
         <nav>
-           <p className="calenderPreview"><img src={CalendarIcon} alt=""/> </p>
-           <p><img src={AddEntry}  alt="#"/></p>
-           <p><img src={Users}  alt="#"/></p>
+           <Link to="/calendarView" className="calenderPreview styleDropdown"><img src={CalendarIcon} alt=""/> </Link>
+           <Link to="/" className="styleDropdown"><img src={AddEntry}  alt="#"/></Link>
+           <Link to="/loginView" className="styleDropdown"><img src={Users}  alt="#"/></Link>
 
-           <div><CalendarEntry/></div>
+           
         </nav>
     )
 }

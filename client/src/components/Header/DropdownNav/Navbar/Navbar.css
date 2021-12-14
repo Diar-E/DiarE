@@ -2,7 +2,7 @@ nav{
     width:150px;
     margin: 0;
 }
-p{
+.styleDropdown{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,11 +13,11 @@ p{
     background-color: white;
     transition: 100ms background-color;
 }
-p:hover{
+.styleDropdown:hover{
     background-color: darkgray;
 }
 
-p img{
+.styleDropdown img{
     height: 64px;
     width: 64px;
 }
