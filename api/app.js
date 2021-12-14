@@ -7,6 +7,7 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var testAPIRouter = require('./routes/testAPI');
+var mongo = require('./db/mongo');
 var app = express();
 
 // view engine setup
@@ -38,5 +39,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// database stuff
+const dbConMongo = mongo.getDb();
+mongo.connectToServer();
 
 module.exports = app;
