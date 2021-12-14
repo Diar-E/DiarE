@@ -1,19 +1,19 @@
 .dropDown{
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     overflow: hidden;
 }
 
 .collapsible{
     height: 600px;
-    width: 150px;
+    width: 100px;
 }
 .collBtn{   
     background: none;
     border: none;
     cursor: pointer;
-    width: 150px;
-    height:150px;
+    width: 100px;
+    height:100px;
     outline: none;
     transition: 100ms background-color;
 }

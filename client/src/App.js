@@ -38,8 +38,6 @@ class App extends Component {
             <Route path="/loginView" element={<LoginView/>}/>
           </Routes>
         </Router>
-
-        
       </div>
     );
   }
