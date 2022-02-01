@@ -30,8 +30,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        
-
         <Router>
           <Header />
           <Routes>
