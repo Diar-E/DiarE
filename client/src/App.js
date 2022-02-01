@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header/Header.jsx';
 import CalendarView from './components/CalendarView/CalendarView.jsx';
 import LoginView from './components/LoginView/LoginView.jsx';
+import EntryView from './components/EntryView/EntryView.jsx';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
@@ -36,6 +37,7 @@ class App extends Component {
           <Routes>
             <Route path="/calendarView" element={<CalendarView/>}/>
             <Route path="/loginView" element={<LoginView/>}/>
+            <Route path="/entryView" element={<EntryView/>}/>
           </Routes>
         </Router>
       </div>

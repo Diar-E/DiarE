@@ -26,7 +26,7 @@ const LoginView = () => {
             <div className="cont">
                 <div className="button back">Previous</div>
                 <div className="button next">Next</div>
-            </div>
+           </div>
         </div>
         </>
     )

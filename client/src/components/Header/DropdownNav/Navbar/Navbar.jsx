@@ -12,9 +12,8 @@ const Navbar = () => {
     return (
         <nav>
            <Link to="/calendarView" className="calenderPreview styleDropdown"><img src={CalendarIcon} alt=""/> </Link>
-           <Link to="/" className="styleDropdown"><img src={AddEntry}  alt="#"/></Link>
+           <Link to="/entryView" className="styleDropdown"><img src={AddEntry}  alt="#"/></Link>
            <Link to="/loginView" className="styleDropdown"><img src={Users}  alt="#"/></Link>
-
            
         </nav>
     )
