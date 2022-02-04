@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var testAPIRouter = require('./routes/testAPI');
 var mongo = require('./db/mongo');
 var app = express();
+var entry = require('./routes/entry');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,6 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/testAPI', testAPIRouter);
+app.use('/entry', entry);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -39,6 +42,18 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.post('/entry', function(req, res) {
+  console.log('Inside Entry');
+  const newEntry = {
+      UserID: req.body.userID,
+      Date: req.body.date,
+      value: req.body.value
+  };
+
+  console.log(newEntry);
+});
+
 
 // database stuff
 const dbConMongo = mongo.getDb();
