@@ -3,28 +3,13 @@ import Header from './components/Header/Header.jsx';
 import CalendarView from './components/CalendarView/CalendarView.jsx';
 import LoginView from './components/LoginView/LoginView.jsx';
 import EntryView from './components/EntryView/EntryView.jsx';
+import EntryList from './components/EntryView/EntryList.jsx';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-
-
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { apiResponse: "" };
-  }
-  callAPI() {
-    fetch("http://localhost:9000/testAPI")
-      .then(res => res.text())
-      .then(res => this.setState({ apiResponse: res }));
-  }
-
-  componentWillMount() {
-    this.callAPI();
-  }
-  
-  componentDidMount() {
-    this.callAPI();
   }
 
   render() {
@@ -35,13 +20,12 @@ class App extends Component {
           <Routes>
             <Route path="/calendarView" element={<CalendarView/>}/>
             <Route path="/loginView" element={<LoginView/>}/>
-            <Route path="/entryView" element={<EntryView/>}/>
+            <Route path="/entryList" element={<EntryList/>}/>
+            <Route path="/entryEdit" element={<EntryView id="" date="" text="" users="1"/> }/>
           </Routes>
         </Router>
       </div>
     );
   }
 }
-
-
 export default App;
