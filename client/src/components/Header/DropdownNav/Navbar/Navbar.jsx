@@ -14,7 +14,7 @@ const Navbar = () => {
            <Link to="/calendarView" className="calenderPreview styleDropdown"><img src={CalendarIcon} alt=""/> </Link>
            <Link to="/entryEdit" className="styleDropdown"><img src={AddEntry}  alt="#"/></Link>
            <Link to="/loginView" className="styleDropdown"><img src={Users}  alt="#"/></Link>
-           <Link to="/entryList" className="styleDropwdown">f</Link>
+           <Link to="/entryList" className="styleDropwdown">EntryList</Link>
         </nav>
     )
 }

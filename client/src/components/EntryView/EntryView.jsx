@@ -1,9 +1,14 @@
 import { Component } from 'react';
+import './EntryView.css';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { Container, FormGroup, Label, Button, Form, Input } from 'reactstrap';
 import { Link } from  'react-dom';
 import axios from 'axios';
+import DatePicker, { registerLocale } from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import es from 'date-fns/locale/es';
+
 class EntryView extends Component {
     emptyItem = {
         date: '',
@@ -11,9 +16,8 @@ class EntryView extends Component {
         users: 1
     };
 
-
-
     constructor(props) {
+        registerLocale("es", es);
         super(props);
         this.state = {
             item: this.emptyItem
@@ -51,22 +55,26 @@ class EntryView extends Component {
         const res = await axios.post("http://localhost:8080/entries/new", JSON.stringify(item), {headers})
         alert(res.status);
     }
-
+    handlePickerChange = (date) => {
+        let item = {...this.state.item, date}
+        this.setState({item});
+    }
     render() {
         const {item} = this.state;
         const title = <h2>{item.id ? 'Edit Entry' : 'Add Entry'}</h2>
+
         return(
             <div className="entryView">
                 <Container>
                 {title}
                     <Form onSubmit={this.handleSubmit}>
                         <FormGroup>
-                            <Label for="date">Date YYYY-MM-DD</Label>
-                            <Input type="text" name="date" id="date" value={item.date || ''}
-                                onChange={this.handleChange} autoComplete="2022-02-08"/>
+                            <Label for="date">
+                                Date
+                                <DatePicker name="date" id="date" selected={item.date || ''} onSelect={(date) => this.handlePickerChange(date)} locale="es"/>
+                            </Label>
                         </FormGroup>
                         <FormGroup>
-                            <Label for="text">Text</Label>
                             <ReactQuill name="text" id="text" value={item.text || ''}
                             onChange={this.handleEditorChange}/>
                         </FormGroup>
