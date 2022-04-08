@@ -5,6 +5,7 @@ import LoginView from './components/LoginView/LoginView.jsx';
 import EntryView from './components/EntryView/EntryView.jsx';
 import EntryList from './components/EntryView/EntryList.jsx';
 import React, { Component } from 'react';
+
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 class App extends Component {
